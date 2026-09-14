@@ -5,7 +5,7 @@ import { useAppDispatch } from './store/store'
 import { ProductsPage } from './components/ProductsPage/ProductsPage'
 import { AppHeader } from './components/AppHeader/Appheader'
 import { AppFooter } from './components/AppFooter/AppFooter'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { ProductPage } from './components/ProductPage/ProductPage'
 import { CreateProductPage } from './components/CreateProductPage/CreateProductPage'
 
@@ -22,9 +22,10 @@ function App() {
 
 			<main className={styles.main}>
 				<Routes>
+					<Route path='/' element={<Navigate to='/products' replace />} />
 					<Route path='/products' element={<ProductsPage />} />
 					<Route path='/products/:id' element={<ProductPage />} />
-          <Route path="/create-product" element={<CreateProductPage />} />
+					<Route path='/create-product' element={<CreateProductPage />} />
 				</Routes>
 			</main>
 

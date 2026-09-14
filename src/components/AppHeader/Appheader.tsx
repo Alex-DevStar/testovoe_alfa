@@ -1,6 +1,7 @@
 import styles from './AppHeader.module.css'
 import { switchFilter } from '../../store/productsListSlice'
 import { useAppDispatch } from '../../store/store'
+import { Link } from 'react-router-dom'
 
 export function AppHeader() {
 	const dispatch = useAppDispatch()
@@ -8,36 +9,37 @@ export function AppHeader() {
 	return (
 		<header className={styles.header}>
 			<div className={styles.container}>
-				<a href='/' className={styles.logo}>
+				<Link to='/products' className={styles.logo}>
 					TestApp
-				</a>
+				</Link>
 
 				<nav className={styles.nav}>
-					<a href='/' className={styles.navLink}>
-						Главная
-					</a>
-
-					<a href='/about' className={styles.navLink}>
-						О проекте
-					</a>
+					<Link to='/products' className={styles.navLink}>
+						Товары
+					</Link>
 				</nav>
+
 				<button
 					className={styles.filterButton}
 					onClick={() => dispatch(switchFilter())}
 				>
 					Избранное
 				</button>
+
 				<div className={styles.actions}>
 					<label className={styles.search}>
 						<span className={styles.searchIcon}>⌕</span>
 
-						<input type='search' placeholder='Поиск товаров...' />
+						<input
+							type='search'
+							placeholder='Поиск товаров...'
+						/>
 					</label>
 
-					<button className={styles.addButton}>
+					<Link to='/create-product' className={styles.addButton}>
 						<span>＋</span>
 						Добавить карточку
-					</button>
+					</Link>
 				</div>
 			</div>
 		</header>
