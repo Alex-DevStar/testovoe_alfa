@@ -6,7 +6,7 @@ SPA-каталог продуктов, разработанный в рамка�
 
 ## 🚀 Demo
 
-> GitHub Pages: будет добавлено после деплоя
+[Открыть приложение на GitHub Pages](https://alex-devstar.github.io/testovoe_alfa/)
 
 ## 🛠️ Стек
 
